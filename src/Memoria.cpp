@@ -1,4 +1,6 @@
 #include <iostream>
+#include <memory>
+
 using namespace std;
 class Empleado{
 private: //Nacen de la relacion tiene
@@ -35,5 +37,22 @@ int main (int argc, char const *argv[])
     int a=37;
     char b = (char) a; 
     cout << b << endl;
+
+    //Punteros en C y C++
+    int* dirA = (int*)malloc(sizeof(int)); //C     
+    *dirA = 24;
+    free(dirA);
+
+    int* dirB = new int(24);              //C++
+    delete dirB;
+
+    cout << *dirA << endl;
+    cout << *dirB << endl;
+
+    //Smart pointer
+    unique_ptr<int> dirC;
+    
+
+
 return 0;
 }
